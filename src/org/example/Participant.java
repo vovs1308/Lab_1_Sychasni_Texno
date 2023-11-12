@@ -1,5 +1,8 @@
 package org.example;
-abstract class Participant {
+import java.util.Objects;
+
+// Класс для участников
+class Participant {
     private String name;
     private int score;
 
@@ -19,5 +22,23 @@ abstract class Participant {
         this.score = score;
     }
 
-    public abstract void compete();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Participant that = (Participant) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Participant{" + "name='" + name + '\'' + ", score=" + score + '}';
+    }
 }
+
+

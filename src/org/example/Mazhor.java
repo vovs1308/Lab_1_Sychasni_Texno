@@ -1,19 +1,8 @@
 package org.example;
 
-public class Mazhor extends Participant implements Runnable
-{
+// Добавим подклассы для конкретных участников
+class Mazhor extends Participant {
     public Mazhor(String name) {
         super(name);
-    }
-
-    @Override
-    public void compete() {
-        System.out.println(getName() + " бежит.");
-        run();
-    }
-
-    @Override
-    public void run() {
-        System.out.println(getName() + " быстро бежит!");
     }
 }

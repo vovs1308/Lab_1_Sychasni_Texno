@@ -1,6 +1,13 @@
 package org.example;
 public class Main {
+
     public static void main(String[] args) {
+        //System.out.print("Победитель ");
+        //int a=5;
+        //Integer a1=10;
+        //a1.equals(a);
+        //boolean isEquals = a1.equals(a);
+        //System.out.println(a1.equals(a)); пометка
         Participant mazhor = new Mazhor("Мажор");
         Participant rabotyaga = new Rabotyaga("Работяга");
         Participant student = new Student("Студент");
@@ -20,11 +27,14 @@ public class Main {
         // Проводим состязания
         for (Competition competition : competitions) {
             competition.performCompetition();
+            System.out.println(competition.getParticipant().toString()); // Вывод информации о каждом участнике
         }
 
         // Определяем победителя
         Participant winner = findWinner(competitions);
         System.out.println("Победитель: " + winner.getName());
+        System.out.println(mazhor.equals(rabotyaga)); // Сравнение участников
+        System.out.println(mazhor.toString()); // Вывод информации о участнике
     }
 
     private static Participant findWinner(Competition[] competitions) {
