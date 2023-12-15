@@ -11,12 +11,23 @@ public class ProblemSolvingCompetition implements Competition {
 
     @Override
     public void performCompetition() {
-        System.out.println(participant.getName() + " решает " + problemsCount + " задач.");
-        // Здесь можно добавить логику для определения результатов соревнования по решению задач.
-        // В данном примере, просто устанавливаем баллы в зависимости от количества решенных задач.
-        int score = problemsCount * 5;
-        participant.setScore(score);
-        System.out.println(participant.getName() + " набрал " + score + " очков.");
+        try {
+            if (problemsCount < 0) {
+                throw new NegativeScoreException("Количество задач не может быть отрицательным.");
+            }
+
+            System.out.println(participant.getName() + " решает " + problemsCount + " задач.");
+            int score = problemsCount * 5;
+            if (score < 0) {
+                throw new NegativeScoreException("Баллы не могут быть отрицательными.");
+            }
+            participant.setScore(score);
+            System.out.println(participant.getName() + " набрал " + score + " очков.");
+        } catch (NegativeScoreException e) {
+            System.err.println("Ошибка: " + e.getMessage());
+        } finally {
+            System.out.println("Блок finally выполнен.");
+        }
     }
 
     @Override

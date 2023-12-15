@@ -11,12 +11,20 @@ public class RunningCompetition implements Competition {
 
     @Override
     public void performCompetition() {
-        System.out.println(participant.getName() + " бежит " + distance + " метров.");
-        // Здесь можно добавить логику для определения результатов бегового соревнования.
-        // В данном примере, просто устанавливаем баллы в зависимости от расстояния.
-        int score = distance / 2;
-        participant.setScore(score);
-        System.out.println(participant.getName() + " набрал " + score + " очков.");
+        try {
+            if (distance < 0) {
+                throw new IllegalArgumentException("Расстояние не может быть отрицательным.");
+            }
+
+            System.out.println(participant.getName() + " бежит " + distance + " метров.");
+            int score = distance / 2;
+            participant.setScore(score);
+            System.out.println(participant.getName() + " набрал " + score + " очков.");
+        } catch (IllegalArgumentException e) {
+            System.err.println("Ошибка: " + e.getMessage());
+        } finally {
+            System.out.println("Блок finally выполнен.");
+        }
     }
 
     @Override

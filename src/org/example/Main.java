@@ -2,12 +2,7 @@ package org.example;
 public class Main {
 
     public static void main(String[] args) {
-        //System.out.print("Победитель ");
-        //int a=5;
-        //Integer a1=10;
-        //a1.equals(a);
-        //boolean isEquals = a1.equals(a);
-        //System.out.println(a1.equals(a)); пометка
+
         Participant mazhor = new Mazhor("Мажор");
         Participant rabotyaga = new Rabotyaga("Работяга");
         Participant student = new Student("Студент");
@@ -28,6 +23,12 @@ public class Main {
         for (Competition competition : competitions) {
             competition.performCompetition();
             System.out.println(competition.getParticipant().toString()); // Вывод информации о каждом участнике
+        }
+        Example example = new Example();
+        try {
+            example.processNumber(-5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Произошло исключение: " + e.getMessage());
         }
 
         // Определяем победителя
