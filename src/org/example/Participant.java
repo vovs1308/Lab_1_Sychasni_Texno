@@ -1,13 +1,16 @@
 package org.example;
+
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-// Класс для участников
-class Participant {
+public class Participant {
     private String name;
     private int score;
+    private LocalDateTime creationDate;
 
     public Participant(String name) {
         this.name = name;
+        this.creationDate = LocalDateTime.now();
     }
 
     public String getName() {
@@ -20,6 +23,10 @@ class Participant {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
     }
 
     @Override
@@ -37,8 +44,6 @@ class Participant {
 
     @Override
     public String toString() {
-        return "Participant{" + "name='" + name + '\'' + ", score=" + score + '}';
+        return "Participant{" + "name='" + name + '\'' + ", score=" + score + ", creationDate=" + creationDate + '}';
     }
 }
-
-

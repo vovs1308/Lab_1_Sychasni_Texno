@@ -1,0 +1,12 @@
+org.example.RunningCompetition@238e0d81
+org.example.RunningCompetition@31221be2
+org.example.RunningCompetition@377dca04
+org.example.RunningCompetition@728938a9
+org.example.ProblemSolvingCompetition@21b8d17c
+org.example.ProblemSolvingCompetition@6433a2
+org.example.ProblemSolvingCompetition@5910e440
+org.example.ProblemSolvingCompetition@6267c3bb
+Participant{name='Мажор', score=75, creationDate=2023-12-20T20:57:34.136016700}
+Participant{name='Работяга', score=100, creationDate=2023-12-20T20:57:34.136016700}
+Participant{name='Студент', score=200, creationDate=2023-12-20T20:57:34.136016700}
+Participant{name='Ботаник', score=300, creationDate=2023-12-20T20:57:34.136016700}
